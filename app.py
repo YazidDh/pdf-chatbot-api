@@ -55,9 +55,22 @@ import time
 from typing import List, Tuple
 
 
-
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
+# Add ALL dev origins if needed
+origins = [
+    "http://localhost:4200",  # Angular app
+    "http://127.0.0.1:4200",  # Just in case
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # or ["*"] temporarily
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # Load QA system
 start_load = time.time()
 qa = load_db("rh_pdf/Rh_politiques.pdf", "stuff", 4)
