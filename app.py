@@ -59,10 +59,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 # Add ALL dev origins if needed
-origins = [
-    "http://localhost:4200",  # Angular app
-    "http://127.0.0.1:4200",  # Just in case
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
