@@ -1,5 +1,8 @@
-langchain>=0.1.0
-langchain-experimental>=0.0.12
-langchain-ollama>=0.0.4
-docarray>=0.32.0
-pypdf>=3.17.0
+langchain
+langchain-community
+langchain-ollama
+docarray
+fastapi
+uvicorn
+pydantic
+langdetect

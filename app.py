@@ -8,8 +8,7 @@ from langchain_ollama.embeddings import OllamaEmbeddings
 from langchain.document_loaders import TextLoader
 from langchain.document_loaders import PyPDFLoader
 
-# Multi language chatbot
-from langchain.embeddings import HuggingFaceEmbeddings
+
 
 from translator import translate_to_french
 
@@ -85,7 +84,7 @@ def ask_question(q: Question):
     question = q.question
     res_time = time.time()
 
-    result = qa({"question": question, "chat_history": chat_history})
+    result = qa({"question": question, "chat_history": []})
     answer = translate_to_french(result["answer"])
 
     # Append to history
